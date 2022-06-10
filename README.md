@@ -3,6 +3,12 @@
 - Create new playgrond
 - Install the Process Automation superbadge unmanaged package(package ID 04t46000001Zch4)
 
+## Challenges
+- [Automate Leads](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/blob/main/README.md#automate-leads)
+- [Automate Accounts](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/blob/main/README.md#automate-accounts)
+- [Create Robot Setup Object](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/blob/main/README.md#create-robot-setup-object)
+- [Create Sales Process and Validate Opportunities]()
+
 ## Challenge 1
 ## Automate Leads
 
