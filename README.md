@@ -57,29 +57,32 @@ OR(AND(LEN(State) > 2, NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:I
 - New->
   - DataType: Roll-Up Summary
   - Label: Number of deals
-  - Summary Type: COUNT
   - Summarized Object:	Opportunity
-  - Filter Criteria: None
+  - Summary Type: COUNT
+  - Filter Criteria: All records should be included in the calculation
 - Save and New
   - DataType: Roll-Up Summary
   - Label: Number of won deals
-  - Summary Type: COUNT
   - Summarized Object: Opportunity
-  - Filter Criteria: Stage EQUALS Closed Won
+  - Summary Type: COUNT
+  - Filter Criteria: Only records meeting certain criteria should be included in the calculation
+  - Stage EQUALS Closed Won
 - Save and New
   - DataType: Roll-Up Summary
   - Label: Last won deal date
-  - Summary Type: MAX
   - Summarized Object: Opportunity
+  - Summary Type: MAX
   - Field to Aggregate: Opportunity: Close Date
-  - Filter Criteria: Stage EQUALS Closed Won
+  - Filter Criteria: Only records meeting certain criteria should be included in the calculation
+  - Stage EQUALS Closed Won
 - Save and New
   - DataType: Roll-Up Summary
   - Label: Amount of won deals
-  - Summary Type: SUM
   - Summarized Object: Opportunity
+  - Summary Type: SUM
   - Field to Aggregate: Opportunity: Amount
-  - Filter Criteria: Stage EQUALS Closed Won
+  - Filter Criteria: Only records meeting certain criteria should be included in the calculation
+  - Stage EQUALS Closed Won
 - Save and New
   - DataType: Formula
   - Label: Deal win percent
