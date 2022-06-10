@@ -60,6 +60,7 @@ OR(AND(LEN(State) > 2, NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:I
   - Summarized Object:	Opportunity
   - Summary Type: COUNT
   - Filter Criteria: All records should be included in the calculation
+  - Set Field Level Security: Visible to all
 - Save and New
   - DataType: Roll-Up Summary
   - Label: Number of won deals
@@ -67,6 +68,7 @@ OR(AND(LEN(State) > 2, NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:I
   - Summary Type: COUNT
   - Filter Criteria: Only records meeting certain criteria should be included in the calculation
   - Stage EQUALS Closed Won
+  - Set Field Level Security: Visible to all
 - Save and New
   - DataType: Roll-Up Summary
   - Label: Last won deal date
@@ -75,6 +77,7 @@ OR(AND(LEN(State) > 2, NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:I
   - Field to Aggregate: Opportunity: Close Date
   - Filter Criteria: Only records meeting certain criteria should be included in the calculation
   - Stage EQUALS Closed Won
+  - Set Field Level Security: Visible to all
 - Save and New
   - DataType: Roll-Up Summary
   - Label: Amount of won deals
@@ -83,6 +86,7 @@ OR(AND(LEN(State) > 2, NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:I
   - Field to Aggregate: Opportunity: Amount
   - Filter Criteria: Only records meeting certain criteria should be included in the calculation
   - Stage EQUALS Closed Won
+  - Set Field Level Security: Visible to all
 - Save and New
   - DataType: Formula
   - Label: Deal win percent
@@ -113,7 +117,41 @@ OR(AND(LEN(State) > 2, NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:I
   ISCHANGED( Name ) && ( OR( ISPICKVAL( Type ,'Customer - Direct') ,ISPICKVAL( Type ,'Customer - Channel') ))
   ```
   - Error Message:	You can't change "Customer direct" or "Customer channel"
-  - Error Location: Account Name
+  - Error Location: Field: Account Name
+
+
+## Challenge 3
+## Create Robot Setup Object
+
+- Object Manager->
+  - Create-> Custom Object
+  - Label: Robot Setup
+  - Record Name: Robot Setup Name
+  - Data Type: Auto Number
+  - Display Format: ROBOT SETUP-{0000}
+  - Starting Number: 0
+- Save
+- Object Manager->
+- Robot Setup->
+- Fields & Relationships->
+- New->
+  - DataType: Date
+  - Label: Date
+- Save and New
+  - DataType: Text
+  - Label: Notes
+- Save and New
+  - DataType: Number
+  - Label: Day of the Week
+- Save and New
+  - DataType: Master-Detail Relationship
+  - Related to: Opportunity
+  - Label: Opportunity
+- Save it
+
+## Challenge 4
+## Create Sales Process and Validate Opportunities
+
 
 
 
