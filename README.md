@@ -7,7 +7,7 @@
 - [Automate Leads](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/blob/main/README.md#automate-leads)
 - [Automate Accounts](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/blob/main/README.md#automate-accounts)
 - [Create Robot Setup Object](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/blob/main/README.md#create-robot-setup-object)
-- [Create Sales Process and Validate Opportunities]()
+- [Create Sales Process and Validate Opportunities](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/#create-sales-process-and-validate-opportunities)
 
 ## Challenge 1
 ## Automate Leads
