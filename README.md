@@ -187,7 +187,7 @@ Text( WEEKDAY( Date__c ) ) )```
 - Object Manager->
 - Opportunity->
 - Stage->
--  pportunity Stages Picklist Values->
+- Opportunity Stages Picklist Values->
 - New->
 - Stage Name: Awaiting Approval
 - Probability: 20
