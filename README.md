@@ -158,6 +158,6 @@ OR(AND(LEN(State) > 2, NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:I
 ## Challenge 4
 ## Create Sales Process and Validate Opportunities
 
-
+- 
 
 
