@@ -4,11 +4,11 @@
 - Install the Process Automation superbadge unmanaged package(package ID 04t46000001Zch4)
 
 ## Challenges
-- 1 [Automate Leads](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/blob/main/README.md#automate-leads)
-- 2 [Automate Accounts](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/blob/main/README.md#automate-accounts)
-- 3 [Create Robot Setup Object](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/blob/main/README.md#create-robot-setup-object)
+- 1 [Automate Leads](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#automate-leads)
+- 2 [Automate Accounts](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#automate-accounts)
+- 3 [Create Robot Setup Object](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#create-robot-setup-object)
 - 4 [Create Sales Process and Validate Opportunities](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/#create-sales-process-and-validate-opportunities)
-- 5 [Automate Opportunities]()
+- 5 [Automate Opportunities](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#automate-opportunities)
 
 ## Challenge 1
 ## Automate Leads
