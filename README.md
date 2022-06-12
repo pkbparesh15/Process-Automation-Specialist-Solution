@@ -203,6 +203,7 @@ Text( WEEKDAY( Date__c ) ) )```
 - Search and select Sales Processes from Quick Find box
 - New->
 - Sales Process Name: RB Robotics Sales Process
+- Save
 - Remove (Needs Analysis, Value Proposition, Id. Decision Makers, Perception Analysis) from Selected Values
 - Save
 - Object Manager->
