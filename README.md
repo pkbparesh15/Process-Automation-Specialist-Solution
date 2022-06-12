@@ -222,6 +222,104 @@ Text( WEEKDAY( Date__c ) ) )```
 ## Challenge 5
 ## Automate Opportunities
 
-- 
-
+- Setup->
+- Users->
+- New->
+- Last Name: Nushi Davoud
+- Role: CEO
+- User License: Salesforce Platform
+- Profile: Standard Platform User
+- Others insert as you wish but don't change defaults.
+- Search and Select Email Alerts in Quick find Box
+- New Alert->
+  - Description: Email Alert on Opportunity
+  - Object: Opportunity
+  - Email Template: Finance: Account Creation (from RB Robotics Templates)
+  - Selected Recipients: User: Nushi Davoud
+- Save and New
+  - Description: Sales Approval Email
+  - Object: Opportunity
+  - Email Template: SALES: Opportunity Needs Approval (from RB Robotics Templates)
+  - Selected Recipients: User: Nushi Davoud
+- Save and New
+  - Description: Sales: Opportunity Approval Request Mail
+  - Object: Opportunity
+  - Email Template: Sales: Opportunity Approval Status Email (from RB Robotics Templates)
+  - Selected Recipients: User: Nushi Davoud
+- Save
+- Search and Select Approval Processes in Quick find Box
+- Manage Approval Processes For: Opportunity
+- Create New Approval Process-> Use Standard Setup Wizard
+  - Process Name: Prospect Approval
+  - next
+  - Field: Opportunity: Stage
+  - Operator: equals
+  - Value: Negotation/Review
+  - Field: Opportunity: Amount
+  - Operator: greater than
+  - Value: 100000
+  - Next-> Next->
+  - Email Template: Sales: Opportunity Approval Status Email
+  - Next
+  - Selected Fields: Opportunity Name, Opportunity Owner
+  - Approval Page Fields: Select
+  - Next-> Save
+- What Would You Like To Do Now? : 'll do this later. Take me to the approval detail page to review what I've just created.
+- Go
+- Initial Submission Actions: Add New
+  - Field Update->
+  - Name: Approval
+  - Field to Update: Stage
+  - Specify New Field Value: A specific value: Awaiting Approval
+- Save
+  - Approval Steps: New Approval Step
+  - Name: Approval for Prospect
+  - Next-> Next->
+  - Select Approver: Automatically assign to approver(s). : Nushi Davoud
+  - Save
+  - What Would You Like To Do Now? : No, I'll do this later. Take me to the approval process detail page to review what I've just created.
+  - Go
+- Final Approval Actions: Add New
+- Field Update->
+  - Name: Stage-Closed Won
+  - Field to Update: Stage
+  - Specify New Field Value: A specific value: Closed Won
+- Save and New
+  -  Name:Approved Check
+  - Field to Update: Approved
+  - Specify New Field Value: Checkbox Options: True
+- Save
+- Add Existing->
+  - Choose Action Type: Email Alert
+  - Add: Sales: Opportunity Approval Request Mail
+ - Save
+- Final Rejection Actions: Add Existing
+  - Choose Action Type: Email Alert
+  - Add: Sales Approval Email
+  - Save
+- Add New-> Field Update->
+  - Name: State Nego
+  - Field to Update: Stage
+  - Specify New Field Value: A specific value: Negotiation/Review
+- Save
+- Recall Actions-> Add New
+  - Name: approvedcheck
+  - Field to Update: Approved
+  - Specify New Field Value: Checkbox Options: True
+- Save and New
+  - Name: StagesClosedWon
+  - Field to Update: Stage
+  - Specify New Field Value: A specific value: Closed Won
+- Save
+- Activate
+- Search and Select Approval Processes in Quick find Box
+- New
+  - Continue in Process Builder
+  - Process Name: Automate Opportunity
+  - The process starts when: A record changes
+  - Save
+    - Add Object
+    - Opportunity
+    - Save
+    - Add Criteria
 
