@@ -193,6 +193,7 @@ Text( WEEKDAY( Date__c ) ) )```
 
 - Object Manager->
 - Opportunity->
+- Field and Relationship->
 - Stage->
 - Opportunity Stages Picklist Values->
 - New->
