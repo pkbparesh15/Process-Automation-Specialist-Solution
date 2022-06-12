@@ -4,11 +4,13 @@
 - Install the Process Automation superbadge unmanaged package(package ID 04t46000001Zch4)
 
 ## Challenges
-- 1 [Automate Leads](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#automate-leads)
-- 2 [Automate Accounts](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#automate-accounts)
-- 3 [Create Robot Setup Object](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#create-robot-setup-object)
-- 4 [Create Sales Process and Validate Opportunities](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/#create-sales-process-and-validate-opportunities)
-- 5 [Automate Opportunities](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#automate-opportunities)
+- 1) [Automate Leads](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#automate-leads)
+- 2) [Automate Accounts](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#automate-accounts)
+- 3) [Create Robot Setup Object](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#create-robot-setup-object)
+- 4) [Create Sales Process and Validate Opportunities](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution/#create-sales-process-and-validate-opportunities)
+- 5) [Automate Opportunities](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#automate-opportunities)
+- 6) [Create Flow for Opportunities](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#create-flow-for-opportunities)
+- 7) [Automate Setups](https://github.com/pkbparesh15/Process-Automation-Specialist-Solution#automate-setups)
 
 ## Challenge 1
 ## Automate Leads
@@ -405,6 +407,77 @@ Text( WEEKDAY( Date__c ) ) )```
     - Add Action
       - Action Type: Submit for Approval
       - Action Name: Approval Pro
-      - Object: Opportunity
-      - Approval Process: 
+      - Approval Process: Specific approval process: Prospect Approval
+      - Skip the entry criteria for this process? : Yes
+      - Submitter: Current User
+    - Save
+    - Add Criteria
+    - Criteria Name: Closed Won Deal
+    - Criteria for Executing Actions: No criteria—just execute the actions!
+    - Save
+    - Add Action
+      - Action Type: Create a Record
+      - Action Name: Record for Robot
+      - Record Type: Robot Setup
+        - Field: Opportunity
+        - Type: Field Reference
+        - Value: Opportunity->Opportunity ID
+        - Field: Date
+        - Type: Formula
+        - Value: ```CASE(MOD([Opportunity].CloseDate + 180- DATE(1900,1,7),7),0,[Opportunity].CloseDate + 181,6,[Opportunity].CloseDate + 182,[Opportunity].CloseDate + 180)```
+    - Save
+    - Add Action
+      - Action Type: Email Alerts
+      - Action Name: Send for Closed Deal
+      - Email Alert: Email_Alert_on_Opportunity
+    - Save
+    - In Cuustomer , Prospect Account Criteria
+      - Click STOP
+      - Select Evaluate the next criteria
+      - Save
+  - Activate
+  - Confirm
 
+## Challenge 6
+## Create Flow for Opportunities
+
+- Setup
+- Search ***Process Automation*** and select ***Flows***
+- New Flow->
+- Screen Flow->
+- Create->
+- Change Auto-Layout to Free-Form
+- Drag and drop a screen from Elements tab
+- Label: Product Quick Search
+- From components drag and drop radio buttons on the new screen layout
+  - Label: Product Type
+  - DataType: Text
+  - Choice: New Choice Resource
+    - Resource Type: Choice
+    - API Name: RainbowBot
+    - Choice Label: RainbowBot
+    - Choice Value: RainbowBot
+    - Done
+  - Add Choice
+  - Choice: New Choice Resource
+    - Resource Type: Choice
+    - API Name: CloudyBot
+    - Choice Label: CloudyBot
+    - Choice Value: CloudyBot
+    - Done
+  - Add Choice
+  - Choice: New Choice Resource
+    - Resource Type: Choice
+    - API Name: AssemblySystem
+    - Choice Label: Assembly System
+    - Choice Value: AssemblySystem
+    - Done
+- Drag and drop a **New Get Records** from Elements tab
+  - Label: Product
+  - Object: Product2
+  - Field: Name
+  - Operator: Equals
+  - Value: Product Type
+  - How Many Records to Store: Only the first record
+  - How to Store Record Data
+- 
