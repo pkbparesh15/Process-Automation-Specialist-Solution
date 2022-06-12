@@ -167,7 +167,7 @@ OR(AND(LEN(State) > 2, NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:I
   - Length: 255
   - Field Level Security: Visible
 - Save and New
-  - DataType: Number
+  - DataType: Formula
   - Label: Day of the Week
   - Formula Return Type: Text
   - Formula: ```CASE( WEEKDAY( Date__c ),
@@ -323,7 +323,7 @@ Text( WEEKDAY( Date__c ) ) )```
   - Specify New Field Value: A specific value: Closed Won
 - Save
 - Activate
-- Search and Select Approval Processes in Quick find Box
+- Search and Select Process Builder in Quick find Box
 - New
   - Continue in Process Builder
   - Process Name: Automate Opportunity
