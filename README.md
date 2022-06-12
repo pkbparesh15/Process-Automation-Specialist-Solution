@@ -61,6 +61,8 @@ OR(AND(LEN(State) > 2, NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:I
   - Select the user or queue to assign the Lead to : Queue : Assembly System Sales
 - Save
 
+### Check Challenge!!
+
 ## Challenge 2
 ## Automate Accounts
 
@@ -139,6 +141,7 @@ OR(AND(LEN(State) > 2, NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:I
   - Error Location: Field: Account Name
 - Save
 
+### Check Challenge!!
 
 ## Challenge 3
 ## Create Robot Setup Object
@@ -183,6 +186,8 @@ Text( WEEKDAY( Date__c ) ) )```
   - Field Level Security: Visible
 - Save
 
+### Check Challenge!!
+
 ## Challenge 4
 ## Create Sales Process and Validate Opportunities
 
@@ -220,6 +225,8 @@ Text( WEEKDAY( Date__c ) ) )```
 - Error Condition Formula: ```IF(( Amount > 100000 && Approved__c <> True && ISPICKVAL( StageName,'Closed Won') ),True,False)```
 - Error Message: Appropriate value should be given
 - Save
+
+### Check Challenge!!
 
 ## Challenge 5
 ## Automate Opportunities
@@ -438,6 +445,8 @@ Text( WEEKDAY( Date__c ) ) )```
   - Activate
   - Confirm
 
+### Check Challenge!!
+
 ## Challenge 6
 ## Create Flow for Opportunities
 
@@ -447,7 +456,7 @@ Text( WEEKDAY( Date__c ) ) )```
 - Screen Flow->
 - Create->
 - Change Auto-Layout to Free-Form
-- Drag and drop a screen from Elements tab
+- Drag and drop a **Screen** from Elements tab
 - Label: Product Quick Search
 - From components drag and drop radio buttons on the new screen layout
   - Label: Product Type
@@ -472,12 +481,56 @@ Text( WEEKDAY( Date__c ) ) )```
     - Choice Label: Assembly System
     - Choice Value: AssemblySystem
     - Done
+  - Done
 - Drag and drop a **New Get Records** from Elements tab
   - Label: Product
-  - Object: Product2
+  - Object: Product
   - Field: Name
   - Operator: Equals
   - Value: Product Type
   - How Many Records to Store: Only the first record
-  - How to Store Record Data
-- 
+  - How to Store Record Data: Choose fields and assign variables (advanced)
+  - Where to Store Field Values: Together in a record variable
+  - Record: New Record
+    - Resource Type: Variable
+    - API Name: FilterResult
+    - Data Type: Record
+    - Object: Product
+    - Done
+  - Field: Name
+  - Done
+- Drag and drop a **Screen** from Elements tab
+  - Label: Final Screen
+  - Drag and drop a **Display Text** from Components tab
+  - API Nme: Display
+  - Insert a resource: {!FilterResult}
+  - Done
+- Connect the Flow in order: Start-> Product Quick Search-> Product-> Final Screen
+- Save
+- Flow Label: Product Quick Search
+- Save
+- Activate
+- Setup->
+- Search and Select Lightning App Builder in Quick Find Box
+- New->
+  - Record Page->
+  - Next
+  - Label: Product Quick Search
+  - Object: Opportunity
+  - Next
+  - Select any template of your choice
+  - Drag and drop **Flow** from components tab
+  - Flow: Product Quick Search
+  - Save
+  - Activate
+  - Close
+
+### Check Challenge!!
+
+## Challenge 7
+## Automate Setups
+
+You have already completed the challenge earlier.
+### Check Challenge!!
+Hope it helped you with the badge.....
+Thank You
