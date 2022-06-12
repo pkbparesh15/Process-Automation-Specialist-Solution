@@ -322,4 +322,89 @@ Text( WEEKDAY( Date__c ) ) )```
     - Opportunity
     - Save
     - Add Criteria
+    - Criteria Name: Customer
+    - Criteria for Executing Actions: Conditions are met
+      - Field: Opportunity->Account ID->Account Type
+      - Operator: Equals
+      - Type: Picklist
+      - Value: Customer Direct
+      - Field: Opportunity->Account ID->Account Type
+      - Operator: Equals
+      - Type: Picklist
+      - Value: Customer Channel
+      - Field: Opportunity->Account ID
+      - Operator: Does not equals
+      - Type: Global Constant
+      - Value: $GlobalConstant.Null
+    - Conditions: Customize the logic
+    - Logic: (1 OR 2) AND 3
+    - Save
+    - Add Action
+      - Action Type: Email Alerts
+      - Action Name: Alert to Finance
+      - Email Alert: Email_Alert_on_Opportunity
+    - Save
+    - Add Criteria
+    - Criteria Name: Prospect Account
+    - Criteria for Executing Actions: Conditions are met
+      - Field: Opportunity->Account ID->Account Type
+      - Operator: Equals
+      - Type: Picklist
+      - Value: Prospect
+      - Field: Opportunity->Account ID
+      - Operator: Does not equals
+      - Type: Global Constant
+      - Value: $GlobalConstant.Null
+      - Field: Opportunity->Stage
+      - Operator: Equals
+      - Type: Picklist
+      - Value: Prospecting
+    - Conditions: All of the conditions are met (AND)
+    - Save
+    - Add Action
+      - Action Type: Create a Record
+      - Action Name: Send Marketing Materials
+      - Record Type: Task
+        - Field: Due Date Only
+        - Type: Formula
+        - Value: TODAY()+7
+        - Field: Assigned To ID
+        - Type: Field Reference
+        - Value: Opportunity->Account ID->Owner ID
+        - Field: Priority
+        - Type: Picklist
+        - Value: High
+        - Field: Status
+        - Type: Picklist
+        - Value: In Progress
+        - Field: Subject
+        - Type: String
+        - Value: Send Marketing Materials
+        - Field: Related To ID
+        - Type: Field Reference
+        - Value: Opportunity->Opportunity ID
+    - Save
+    - Add Action
+      - Action Type: Email Alerts
+      - Action Name: Alert
+      - Email Alert: Email_Alert_on_Opportunity
+    - Save
+    - Add Criteria
+    - Criteria Name: Negotiations or Review
+    - Criteria for Executing Actions: Conditions are met
+      - Field: Opportunity->Stage
+      - Operator: Equals
+      - Type: Picklist
+      - Value: Negotiation/Review
+      - Field: Opportunity->Amount
+      - Operator: Greater than
+      - Type: Currency
+      - Value: 100000
+    - Conditions: All of the conditions are met (AND)
+    - Save
+    - Add Action
+      - Action Type: Submit for Approval
+      - Action Name: Approval Pro
+      - Object: Opportunity
+      - Approval Process: 
 
